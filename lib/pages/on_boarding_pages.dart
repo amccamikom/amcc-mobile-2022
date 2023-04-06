@@ -8,7 +8,7 @@ class OnBoardingPages extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.purple[700],
+      backgroundColor: backgroundColor1,
       body: SafeArea(
         child: Center(
           child: Column(
@@ -44,13 +44,21 @@ class OnBoardingPages extends StatelessWidget {
                 height: 50,
               ),
               ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => SignInPages()),
-                    );
-                  },
-                  child: Text('Lanjut'))
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SignInPages()),
+                  );
+                },
+                child: Text('Lanjut'.toUpperCase()),
+                style: ElevatedButton.styleFrom(
+                  primary: Color(0xff6319B8),
+                  minimumSize: Size(220, 55),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+              )
             ],
           ),
         ),
