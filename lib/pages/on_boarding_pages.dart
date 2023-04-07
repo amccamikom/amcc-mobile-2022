@@ -9,7 +9,14 @@ class OnBoardingPages extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: backgroundColor1,
-      body: SafeArea(
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Color(0xFF6319B8), Color(0xFF7751DD), Color(0xFFA56DE6)],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
+        ),
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -25,6 +32,7 @@ class OnBoardingPages extends StatelessWidget {
               Text(
                 'Keluar Amikom Anti-Ribet!',
                 style: whiteTextStyle.copyWith(
+                  color: Colors.white,
                   fontSize: 20,
                   fontWeight: semiBold,
                 ),
@@ -36,6 +44,7 @@ class OnBoardingPages extends StatelessWidget {
                 'nulis nama, nim, nomor plat, dan jenis motormu karena lupa bawa STNK? ribet! pakai Amibike solusinya!',
                 textAlign: TextAlign.center,
                 style: whiteTextStyle.copyWith(
+                  color: Colors.white,
                   fontSize: 12,
                   fontWeight: reguler,
                 ),
