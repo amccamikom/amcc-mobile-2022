@@ -17,13 +17,17 @@ class HomePage extends StatelessWidget {
                   height: 40,
                 ),
                 Card(
+                  margin: EdgeInsets.symmetric(horizontal: 15),
                   elevation: 3,
                   shadowColor: backgroundColor2,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
                   ),
                   child: Padding(
-                    padding: EdgeInsets.all(10.0),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 25,
+                      vertical: 8,
+                    ),
                     child: Row(
                       children: [
                         Column(
