@@ -7,6 +7,10 @@ Color textColor1 = Color(0xff000000);
 Color textColor2 = Color(0xff333333);
 Color textColor3 = Colors.white70;
 
+TextStyle primaryTextStyle = GoogleFonts.poppins(
+  color: backgroundColor1,
+);
+
 TextStyle blackTextStyle = GoogleFonts.poppins(
   color: textColor1,
 );
