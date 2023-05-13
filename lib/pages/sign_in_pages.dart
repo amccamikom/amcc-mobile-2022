@@ -11,13 +11,27 @@ class SignInPages extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(25.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 100),
-            // image for logo
-            Image.asset(
-              'assets/logo_amibike_purple.png',
-              width: 166,
-              height: 202,
+            Row(
+              children: [
+                Text("Login Account"),
+                SizedBox(
+                  width: 6,
+                ),
+                Image.asset('assets/User.png'),
+              ],
+            ),
+            Text("Hello, Welcome back!"),
+            SizedBox(
+              height: 41,
+            ),
+            Center(
+              child: Image.asset(
+                'assets/logo_amibike_purple.png',
+                width: 166,
+                height: 202,
+              ),
             ),
             SizedBox(height: 50),
             TextField(
@@ -35,21 +49,24 @@ class SignInPages extends StatelessWidget {
                 hintText: 'Enter your password',
                 border: OutlineInputBorder(),
                 prefixIcon: Icon(Icons.lock),
+                suffixIcon: Icon(Icons.remove_red_eye),
               ),
               obscureText: true,
             ),
             SizedBox(height: 50),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => HomePage()),
-                );
-              },
-              child: Text('Login'.toUpperCase()),
-              style: ElevatedButton.styleFrom(
-                primary: backgroundColor1, //warna button
-                minimumSize: Size(200, 40), //size w & h
+            Center(
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => HomePage()),
+                  );
+                },
+                child: Text('Login'.toUpperCase()),
+                style: ElevatedButton.styleFrom(
+                  primary: backgroundColor1, //warna button
+                  minimumSize: Size(200, 40), //size w & h
+                ),
               ),
             )
           ],
