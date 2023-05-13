@@ -8,10 +8,9 @@ class SignInPages extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: ListView(
-          //padding buat bungkus di listview
-          padding: EdgeInsets.all(25),
+      body: Padding(
+        padding: const EdgeInsets.all(25.0),
+        child: Column(
           children: [
             SizedBox(height: 100),
             // image for logo
