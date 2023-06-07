@@ -6,6 +6,7 @@ Color backgroundColor2 = Color(0xffFFFFFF);
 Color textColor1 = Color(0xff000000);
 Color textColor2 = Color(0xff333333);
 Color textColor3 = Colors.white70;
+Color textColor4 = Color(0xffFAFCFF);
 
 TextStyle primaryTextStyle = GoogleFonts.poppins(
   color: backgroundColor1,
@@ -17,6 +18,10 @@ TextStyle blackTextStyle = GoogleFonts.poppins(
 
 TextStyle whiteTextStyle = GoogleFonts.poppins(
   color: textColor3,
+);
+
+TextStyle whiteTextStyle2 = GoogleFonts.poppins(
+  color: textColor4,
 );
 
 TextStyle grayTextStyle = GoogleFonts.poppins(

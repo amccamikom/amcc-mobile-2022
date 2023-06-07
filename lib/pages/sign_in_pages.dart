@@ -1,4 +1,5 @@
 import 'package:amibike/pages/home_page.dart';
+import 'package:amibike/pages/profile_page.dart';
 import 'package:amibike/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -59,7 +60,7 @@ class SignInPages extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => HomePage()),
+                    MaterialPageRoute(builder: (context) => ProfilePage()),
                   );
                 },
                 child: Text('Login'.toUpperCase()),
