@@ -61,7 +61,7 @@ class SignInPages extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => ProfilePage()),
+                      MaterialPageRoute(builder: (context) => HomePage()),
                     );
                   },
                   child: Text('Login'.toUpperCase()),
