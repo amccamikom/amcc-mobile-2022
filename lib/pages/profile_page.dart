@@ -87,21 +87,27 @@ class ProfilePage extends StatelessWidget {
                 ],
               ),
               menuItem(
-                text: 'Edit Profile',
+                image: 'assets/clarity_email-line.png',
+                text: 'Email',
               ),
               menuItem(
+                image: 'assets/history.png',
                 text: 'Riwayat Parkir',
               ),
               menuItem(
+                image: 'assets/clarity_star-line.png',
                 text: 'Ulasan',
               ),
               menuItem(
+                image: 'assets/setting.png',
                 text: 'Pengaturan',
               ),
               menuItem(
+                image: 'assets/help.png',
                 text: 'Pusat Bantuan',
               ),
               menuItem(
+                image: 'assets/delete.png',
                 text: 'Hapus Akun',
               ),
             ],
@@ -114,23 +120,33 @@ class ProfilePage extends StatelessWidget {
 
 class menuItem extends StatelessWidget {
   String text;
-  // String image;
-  menuItem({super.key, required this.text});
+  String image;
+  menuItem({super.key, required this.text, required this.image});
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      decoration: BoxDecoration(
+          border: Border(
+              bottom: BorderSide(
+        color: textColor1,
+        width: 1,
+      ))),
       margin: EdgeInsets.only(top: 25),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          //cara nambahin iconnya gimane?
-          // Icon(
-          //   image,
-          // ),
-          Text(
-            text,
-            style: grayTextStyle.copyWith(fontSize: 18),
+          Container(
+            child: Image.asset(
+              image,
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.only(bottom: 4),
+            child: Text(
+              text,
+              style: grayTextStyle.copyWith(fontSize: 18),
+            ),
           ),
           Icon(
             Icons.chevron_right,
