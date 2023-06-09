@@ -1,8 +1,6 @@
+import 'package:amibike/pages/home_page.dart';
 import 'package:amibike/theme.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -13,17 +11,16 @@ class ProfilePage extends StatelessWidget {
       child: Scaffold(
         backgroundColor: backgroundColor2,
         body: Padding(
-          padding: const EdgeInsets.all(25.0),
+          padding: EdgeInsets.all(30),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
-                children: [
-                  Text(
-                    'Profile',
-                    style: blackTextStyle.copyWith(
-                        fontSize: 40, fontWeight: semiBold),
-                  )
-                ],
+              Text(
+                'Profile',
+                style: blackTextStyle.copyWith(
+                  fontSize: 40,
+                  fontWeight: semiBold,
+                ),
               ),
               SizedBox(
                 height: 35,
@@ -31,21 +28,21 @@ class ProfilePage extends StatelessWidget {
               Container(
                 child: Row(
                   children: [
-                    ClipOval(
-                      child: Image.asset(
-                        'assets/profileUser.png',
-                        width: 126,
-                      ),
+                    Image.asset(
+                      'assets/profileUser.png',
+                      width: 120,
                     ),
                     SizedBox(
-                      width: 14,
+                      width: 13,
                     ),
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Nama Lengkap',
+                            'Nama LengkapDemikian Lah RUpa PAda WAnita Kucing Bermata Kuda ',
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
                             style: blackTextStyle.copyWith(
                                 fontSize: 20, fontWeight: semiBold),
                           ),
@@ -60,55 +57,48 @@ class ProfilePage extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 41,
+                height: 40,
               ),
-              Row(
-                children: [
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => ProfilePage()),
-                      );
-                    },
-                    child: Text(
-                      'Edit Profile',
-                      style: whiteTextStyle2.copyWith(
-                          fontSize: 17, fontWeight: semiBold),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => HomePage(),
                     ),
-                    style: ElevatedButton.styleFrom(
-                      primary: Color(0xff6319B8),
-                      minimumSize: Size(143.65, 44),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                    ),
-                  )
-                ],
+                  );
+                },
+                child: Text(
+                  'Edit Profile',
+                  style: whiteTextStyle2.copyWith(
+                      fontSize: 17, fontWeight: semiBold),
+                ),
+                style: ElevatedButton.styleFrom(
+                  primary: backgroundColor1,
+                  minimumSize: Size(144, 44),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10)),
+                ),
               ),
-              menuItem(
-                image: 'assets/clarity_email-line.png',
-                text: 'Email',
+              SizedBox(
+                height: 20,
               ),
-              menuItem(
-                image: 'assets/history.png',
-                text: 'Riwayat Parkir',
-              ),
-              menuItem(
-                image: 'assets/clarity_star-line.png',
-                text: 'Ulasan',
-              ),
-              menuItem(
-                image: 'assets/setting.png',
-                text: 'Pengaturan',
-              ),
-              menuItem(
-                image: 'assets/help.png',
-                text: 'Pusat Bantuan',
-              ),
-              menuItem(
-                image: 'assets/delete.png',
-                text: 'Hapus Akun',
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      menuItem(text: 'Pengaturan', icon: Icons.settings),
+                      menuItem(text: 'Bantuan', icon: Icons.help),
+                      menuItem(text: 'Tentang', icon: Icons.info),
+                      menuItem(text: 'Pengaturan', icon: Icons.settings),
+                      menuItem(text: 'Bantuan', icon: Icons.help),
+                      menuItem(text: 'Tentang', icon: Icons.info),
+                      menuItem(text: 'Pengaturan', icon: Icons.settings),
+                      menuItem(text: 'Bantuan', icon: Icons.help),
+                      menuItem(text: 'Tentang', icon: Icons.info),
+                    ],
+                  ),
+                ),
               ),
             ],
           ),
@@ -120,39 +110,45 @@ class ProfilePage extends StatelessWidget {
 
 class menuItem extends StatelessWidget {
   String text;
-  String image;
-  menuItem({super.key, required this.text, required this.image});
+  IconData icon;
+  menuItem({super.key, required this.text, required this.icon});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          border: Border(
-              bottom: BorderSide(
-        color: textColor1,
-        width: 1,
-      ))),
-      margin: EdgeInsets.only(top: 25),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Container(
-            child: Image.asset(
-              image,
+        border: Border(
+          bottom: BorderSide(
+            color: textColor1,
+            width: 1,
+          ),
+        ),
+      ),
+      margin: EdgeInsets.only(top: 20),
+      child: Container(
+        margin: EdgeInsets.only(bottom: 20),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              children: [
+                Icon(
+                  icon,
+                ),
+                SizedBox(
+                  width: 15,
+                ),
+                Text(
+                  text,
+                  style: grayTextStyle.copyWith(fontSize: 18),
+                ),
+              ],
             ),
-          ),
-          Container(
-            margin: EdgeInsets.only(bottom: 4),
-            child: Text(
-              text,
-              style: grayTextStyle.copyWith(fontSize: 18),
+            Icon(
+              Icons.chevron_right,
             ),
-          ),
-          Icon(
-            Icons.chevron_right,
-            color: textColor2,
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
