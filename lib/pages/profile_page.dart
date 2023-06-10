@@ -25,36 +25,29 @@ class ProfilePage extends StatelessWidget {
               SizedBox(
                 height: 35,
               ),
-              Container(
-                child: Row(
-                  children: [
-                    Image.asset(
-                      'assets/profileUser.png',
-                      width: 120,
+              Row(
+                children: [
+                  Image.asset('assets/profileUser.png', width: 120),
+                  SizedBox(
+                    width: 13,
+                  ),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Nama Lengkap Kamu Pada Aplikasi Amibike Ini ',
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                          style: blackTextStyle.copyWith(
+                              fontSize: 20, fontWeight: semiBold),
+                        ),
+                        Text('NIM',
+                            style: blackTextStyle.copyWith(fontSize: 14)),
+                      ],
                     ),
-                    SizedBox(
-                      width: 13,
-                    ),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Nama LengkapDemikian Lah RUpa PAda WAnita Kucing Bermata Kuda ',
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
-                            style: blackTextStyle.copyWith(
-                                fontSize: 20, fontWeight: semiBold),
-                          ),
-                          Text(
-                            'NIM',
-                            style: blackTextStyle.copyWith(fontSize: 14),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
               SizedBox(
                 height: 40,
@@ -87,14 +80,12 @@ class ProfilePage extends StatelessWidget {
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
-                      menuItem(text: 'Email', icon: Icons.mail_outline),
-                      menuItem(
-                          text: 'Riwayat Parkir', icon: Icons.history_outlined),
-                      menuItem(text: 'Ulasan', icon: Icons.star_outline),
-                      menuItem(
-                          text: 'Pengaturan', icon: Icons.settings_outlined),
-                      menuItem(text: 'Pusat Bantuan', icon: Icons.help_outline),
-                      menuItem(text: 'Hapus Akun', icon: Icons.delete_outline),
+                      menuItem(text: 'Email', icon: Icons.email),
+                      menuItem(text: 'Riwayat Parkir', icon: Icons.history),
+                      menuItem(text: 'Ulasan', icon: Icons.feedback),
+                      menuItem(text: 'Pengaturan', icon: Icons.settings),
+                      menuItem(text: 'Pusat Bantuan', icon: Icons.help),
+                      menuItem(text: 'Hapus Akun', icon: Icons.delete),
                     ],
                   ),
                 ),
