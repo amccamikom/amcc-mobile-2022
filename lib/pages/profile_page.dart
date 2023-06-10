@@ -87,15 +87,14 @@ class ProfilePage extends StatelessWidget {
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
-                      menuItem(text: 'Pengaturan', icon: Icons.settings),
-                      menuItem(text: 'Bantuan', icon: Icons.help),
-                      menuItem(text: 'Tentang', icon: Icons.info),
-                      menuItem(text: 'Pengaturan', icon: Icons.settings),
-                      menuItem(text: 'Bantuan', icon: Icons.help),
-                      menuItem(text: 'Tentang', icon: Icons.info),
-                      menuItem(text: 'Pengaturan', icon: Icons.settings),
-                      menuItem(text: 'Bantuan', icon: Icons.help),
-                      menuItem(text: 'Tentang', icon: Icons.info),
+                      menuItem(text: 'Email', icon: Icons.mail_outline),
+                      menuItem(
+                          text: 'Riwayat Parkir', icon: Icons.history_outlined),
+                      menuItem(text: 'Ulasan', icon: Icons.star_outline),
+                      menuItem(
+                          text: 'Pengaturan', icon: Icons.settings_outlined),
+                      menuItem(text: 'Pusat Bantuan', icon: Icons.help_outline),
+                      menuItem(text: 'Hapus Akun', icon: Icons.delete_outline),
                     ],
                   ),
                 ),
