@@ -1,3 +1,4 @@
+import 'package:amibike/pages/profile_page.dart';
 import 'package:amibike/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +22,15 @@ class HomePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Image(image: AssetImage('assets/barcodeNavbar.png')),
-                Image.asset('assets/profile.png'),
+                IconButton(
+                  icon: Image.asset('assets/profile.png'),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ProfilePage()),
+                    );
+                  },
+                ),
               ],
             ),
           ),
