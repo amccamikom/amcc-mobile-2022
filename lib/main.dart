@@ -1,3 +1,4 @@
+import 'package:amibike/pages/add_stnk.dart';
 import 'package:amibike/pages/home_page.dart';
 import 'package:amibike/pages/sign_in_pages.dart';
 import 'package:amibike/pages/splash_pages.dart';
@@ -19,7 +20,8 @@ class MyApp extends StatelessWidget {
         '/': (context) => SplashPages(),
         '/on-boarding': (context) => OnBoardingPages(),
         'sign-in': (context) => SignInPages(),
-        'home-page': (context) => HomePage()
+        'home-page': (context) => HomePage(),
+        '/add-stnk':(context) => AddSTNK()
       },
     );
   }
