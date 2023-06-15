@@ -22,9 +22,16 @@ class HomePage extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                IconButton(onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => AddSTNK()),);
-                }, icon: Image.asset('assets/barcodeNavbar.png'),),
+                // IconButton(
+                //   onPressed: () {
+                //     Navigator.push(
+                //       context,
+                //       MaterialPageRoute(builder: (context) => AddSTNK()),
+                //     );
+                //   },
+                //   icon: Image.asset('assets/barcodeNavbar.png'),
+                // ),
+                Image.asset('assets/barcodeNavbar.png'),
                 IconButton(
                   icon: Image.asset('assets/profile.png'),
                   onPressed: () {
@@ -128,10 +135,20 @@ class HomePage extends StatelessWidget {
                         text: 'Scan QR Code',
                         text2: 'No ribet-ribet',
                       ),
-                      NewContainer(
-                        image: 'assets/stnk.png',
-                        text: 'Tambah Plat Nomor',
-                        text2: 'Tinggal foto STNK!',
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => AddSTNK(),
+                            ),
+                          );
+                        },
+                        child: NewContainer(
+                          image: 'assets/stnk.png',
+                          text: 'Tambah Plat Nomor',
+                          text2: 'Tinggal foto STNK!',
+                        ),
                       ),
                       NewContainer(
                         image: 'assets/cover.png',
@@ -142,6 +159,7 @@ class HomePage extends StatelessWidget {
                         image: 'assets/binggung.png',
                         text: 'Tentang',
                         text2: 'Tentang aplikasi kami',
+                        // buton: '',
                       ),
                     ],
                   ),
@@ -159,19 +177,21 @@ class NewContainer extends StatelessWidget {
   String image;
   String text;
   String text2;
-  NewContainer(
-      {super.key,
-      required this.image,
-      required this.text,
-      required this.text2});
+  NewContainer({
+    super.key,
+    required this.image,
+    required this.text,
+    required this.text2,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Container(
-          height: 200,
-          width: 150,
+          height: MediaQuery.of(context).size.width * 0.5,
+          width: MediaQuery.of(context).size.width * 0.4,
+          // width: 150,
           decoration: BoxDecoration(
             color: backgroundColor2,
             borderRadius: BorderRadius.circular(10),
@@ -181,10 +201,11 @@ class NewContainer extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                padding: EdgeInsets.all(7),
-                child: Image.asset(
-                  image,
-                  scale: 0.5,
+                padding: EdgeInsets.all(75),
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(image),
+                  ),
                 ),
               ),
               Text(
