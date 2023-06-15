@@ -1,3 +1,4 @@
+import 'package:amibike/pages/add_stnk.dart';
 import 'package:amibike/pages/profile_page.dart';
 import 'package:amibike/theme.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +22,9 @@ class HomePage extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Image(image: AssetImage('assets/barcodeNavbar.png')),
+                IconButton(onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => AddSTNK()),);
+                }, icon: Image.asset('assets/barcodeNavbar.png'),),
                 IconButton(
                   icon: Image.asset('assets/profile.png'),
                   onPressed: () {

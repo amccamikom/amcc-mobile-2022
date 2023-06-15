@@ -2,39 +2,29 @@ import 'package:amibike/pages/home_page.dart';
 import 'package:amibike/theme.dart';
 import 'package:flutter/material.dart';
 
-class SignInPages extends StatelessWidget {
-  const SignInPages({super.key});
+class AddSTNK extends StatelessWidget {
+  const AddSTNK({super.key});
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: backgroundColor2,
         body: Padding(
-          padding: const EdgeInsets.all(25.0),
+          padding: EdgeInsets.all(30),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
-                children: [
-                  Text("Login Account"),
-                  SizedBox(
-                    width: 6,
-                  ),
-                  Image.asset('assets/User.png'),
-                ],
-              ),
-              Text("Hello, Welcome back!"),
-              SizedBox(
-                height: 41,
-              ),
-              Center(
-                child: Image.asset(
-                  'assets/logo_amibike_purple.png',
-                  width: 166,
-                  height: 202,
+              Text(
+                'Identitas Kendaraan',
+                style: blackTextStyle.copyWith(
+                  fontSize: 32,
+                  fontWeight: semiBold
                 ),
               ),
-              SizedBox(height: 50),
+              SizedBox(
+                height: 50,
+              ),
               TextField(
                 decoration: InputDecoration(
                   labelText: 'Email',
@@ -43,18 +33,39 @@ class SignInPages extends StatelessWidget {
                   prefixIcon: Icon(Icons.email),
                 ),
               ),
-              SizedBox(height: 16),
+              SizedBox(
+                height: 30,
+              ),
               TextField(
                 decoration: InputDecoration(
-                  labelText: 'Password',
-                  hintText: 'Enter your password',
+                  labelText: 'Email',
+                  hintText: 'Enter your email',
                   border: OutlineInputBorder(),
-                  prefixIcon: Icon(Icons.lock),
-                  suffixIcon: Icon(Icons.remove_red_eye),
+                  prefixIcon: Icon(Icons.email),
                 ),
-                obscureText: true,
               ),
-              SizedBox(height: 50),
+              SizedBox(
+                height: 30,
+              ),
+              TextField(
+                decoration: InputDecoration(
+                  labelText: 'Email',
+                  hintText: 'Enter your email',
+                  border: OutlineInputBorder(),
+                  prefixIcon: Icon(Icons.email),
+                ),
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              TextField(
+                decoration: InputDecoration(
+                  labelText: 'Email',
+                  hintText: 'Enter your email',
+                  border: OutlineInputBorder(),
+                  prefixIcon: Icon(Icons.email),
+                ),
+              ),
               Center(
                 child: ElevatedButton(
                   onPressed: () {
@@ -72,8 +83,7 @@ class SignInPages extends StatelessWidget {
               )
             ],
           ),
-        ),
-      ),
-    );
+          ),
+    ));
   }
 }
