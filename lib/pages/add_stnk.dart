@@ -74,7 +74,7 @@ class AddSTNK extends StatelessWidget {
                 },
                 child: Text('Login'.toUpperCase()),
                 style: ElevatedButton.styleFrom(
-                  primary: backgroundColor1, //warna button
+                  backgroundColor: backgroundColor1, //warna button
                   minimumSize: Size(200, 40), //size w & h
                 ),
               ),

@@ -1,18 +1,18 @@
 import 'package:amibike/pages/home_page.dart';
+import 'package:amibike/pages/sign_in_pages.dart';
 import 'package:amibike/theme.dart';
 import 'package:flutter/material.dart';
 
-class SignInPages extends StatelessWidget {
-  const SignInPages({super.key});
+class SignUpPage extends StatelessWidget {
+  const SignUpPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24),
+          padding: const EdgeInsets.all(25.0),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               SizedBox(
                 height: 45,
@@ -22,6 +22,7 @@ class SignInPages extends StatelessWidget {
                 width: 166,
                 height: 202,
               ),
+              SizedBox(height: 50),
               TextField(
                 decoration: InputDecoration(
                   labelText: 'Email',
@@ -30,30 +31,18 @@ class SignInPages extends StatelessWidget {
                   prefixIcon: Icon(Icons.email),
                 ),
               ),
+              SizedBox(height: 16),
               TextField(
                 decoration: InputDecoration(
-                  labelText: 'Email',
-                  hintText: 'Enter your email',
+                  labelText: 'Password',
+                  hintText: 'Enter your password',
                   border: OutlineInputBorder(),
-                  prefixIcon: Icon(Icons.email),
+                  prefixIcon: Icon(Icons.lock),
+                  suffixIcon: Icon(Icons.remove_red_eye),
                 ),
+                obscureText: true,
               ),
-              TextField(
-                decoration: InputDecoration(
-                  labelText: 'Email',
-                  hintText: 'Enter your email',
-                  border: OutlineInputBorder(),
-                  prefixIcon: Icon(Icons.email),
-                ),
-              ),
-              TextField(
-                decoration: InputDecoration(
-                  labelText: 'Email',
-                  hintText: 'Enter your email',
-                  border: OutlineInputBorder(),
-                  prefixIcon: Icon(Icons.email),
-                ),
-              ),
+              SizedBox(height: 50),
               ElevatedButton(
                 onPressed: () {
                   Navigator.push(
@@ -65,6 +54,20 @@ class SignInPages extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: backgroundColor1, //warna button
                   minimumSize: Size(200, 40), //size w & h
+                ),
+              ),
+              SizedBox(height: 50),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => SignInPages(),
+                    ),
+                  );
+                },
+                child: Text(
+                  'Daftar',
                 ),
               ),
             ],

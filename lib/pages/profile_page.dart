@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:amibike/pages/home_page.dart';
 import 'package:amibike/theme.dart';
 import 'package:flutter/material.dart';
@@ -67,7 +69,7 @@ class ProfilePage extends StatelessWidget {
                       fontSize: 17, fontWeight: semiBold),
                 ),
                 style: ElevatedButton.styleFrom(
-                  primary: backgroundColor1,
+                  backgroundColor: backgroundColor1,
                   minimumSize: Size(144, 44),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10)),

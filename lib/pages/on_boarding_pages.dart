@@ -1,4 +1,4 @@
-import 'package:amibike/pages/sign_in_pages.dart';
+import 'package:amibike/pages/sign_up_page.dart';
 import 'package:amibike/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -56,12 +56,12 @@ class OnBoardingPages extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => SignInPages()),
+                    MaterialPageRoute(builder: (context) => SignUpPage()),
                   );
                 },
                 child: Text('Lanjut'.toUpperCase()),
                 style: ElevatedButton.styleFrom(
-                  primary: Color(0xff6319B8),
+                  backgroundColor: Color(0xff6319B8),
                   minimumSize: Size(220, 55),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),

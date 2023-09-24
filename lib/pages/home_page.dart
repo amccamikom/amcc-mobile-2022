@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:amibike/pages/add_stnk.dart';
 import 'package:amibike/pages/profile_page.dart';
 import 'package:amibike/theme.dart';

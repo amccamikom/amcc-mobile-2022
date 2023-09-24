@@ -12,7 +12,7 @@ class SplashPages extends StatefulWidget {
 class _SplashPagesState extends State<SplashPages> {
   @override
   void initState() {
-    // TODO: implement initState
+  
 
     Timer(Duration(seconds: 3),
         (() => Navigator.pushNamed(context, '/on-boarding')));
