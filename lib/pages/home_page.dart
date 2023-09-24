@@ -1,13 +1,20 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:amibike/data/datasources/firebase_remote_datasource.dart';
 import 'package:amibike/pages/add_stnk.dart';
 import 'package:amibike/pages/profile_page.dart';
+import 'package:amibike/pages/sign_up_page.dart';
 import 'package:amibike/theme.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -78,7 +85,13 @@ class HomePage extends StatelessWidget {
                         ],
                       ),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          FirebaseRemoteDatasource().logout();
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (_) {
+                            return SignUpPage();
+                          }));
+                        },
                         child: Text(
                           'LOGOUT',
                           style: whiteTextStyle.copyWith(
@@ -106,7 +119,7 @@ class HomePage extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'DAVID',
+                            '${FirebaseRemoteDatasource().user.email}',
                             style: primaryTextStyle.copyWith(
                               fontSize: 20,
                               fontWeight: semiBold,

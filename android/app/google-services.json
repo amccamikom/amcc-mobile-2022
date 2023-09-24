@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "156708149824",
+    "project_id": "amibike-9e3a2",
+    "storage_bucket": "amibike-9e3a2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:156708149824:android:ac149482a6e2bd712b5da5",
+        "android_client_info": {
+          "package_name": "com.amibike.android"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnh8AjZrxxUhEZ9VloqvnVSeAPP7l2ua8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:156708149824:android:67fe4398100045102b5da5",
+        "android_client_info": {
+          "package_name": "com.example.amibike"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnh8AjZrxxUhEZ9VloqvnVSeAPP7l2ua8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

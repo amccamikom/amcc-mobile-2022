@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:amibike/pages/on_boarding_pages.dart';
 import 'package:flutter/material.dart';
 
 class SplashPages extends StatefulWidget {
@@ -12,10 +13,11 @@ class SplashPages extends StatefulWidget {
 class _SplashPagesState extends State<SplashPages> {
   @override
   void initState() {
-  
-
-    Timer(Duration(seconds: 3),
-        (() => Navigator.pushNamed(context, '/on-boarding')));
+    Timer(
+        Duration(seconds: 3),
+        (() => Navigator.push(context, MaterialPageRoute(builder: (_) {
+              return OnBoardingPages();
+            }))));
 
     super.initState();
   }
