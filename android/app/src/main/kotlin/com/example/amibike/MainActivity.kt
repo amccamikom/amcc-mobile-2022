@@ -1,4 +1,4 @@
-package com.example.amibike
+package com.amibike.android
 
 import io.flutter.embedding.android.FlutterActivity
 

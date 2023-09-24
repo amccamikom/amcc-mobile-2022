@@ -1,18 +1,26 @@
+import 'package:amibike/data/datasources/firebase_remote_datasource.dart';
 import 'package:amibike/pages/home_page.dart';
 import 'package:amibike/pages/sign_in_pages.dart';
 import 'package:amibike/theme.dart';
 import 'package:flutter/material.dart';
 
-class SignUpPage extends StatelessWidget {
+class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});
 
+  @override
+  State<SignUpPage> createState() => _SignUpPageState();
+}
+
+class _SignUpPageState extends State<SignUpPage> {
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         body: Padding(
           padding: const EdgeInsets.all(25.0),
-          child: Column(
+          child: ListView(
             children: [
               SizedBox(
                 height: 45,
@@ -30,6 +38,7 @@ class SignUpPage extends StatelessWidget {
                   border: OutlineInputBorder(),
                   prefixIcon: Icon(Icons.email),
                 ),
+                controller: emailController,
               ),
               SizedBox(height: 16),
               TextField(
@@ -41,14 +50,19 @@ class SignUpPage extends StatelessWidget {
                   suffixIcon: Icon(Icons.remove_red_eye),
                 ),
                 obscureText: true,
+                controller: passwordController,
               ),
               SizedBox(height: 50),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => HomePage()),
+                  FirebaseRemoteDatasource().loginWithEmail(
+                    email: emailController.text,
+                    password: passwordController.text,
                   );
+                  Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(builder: (context) => HomePage()),
+                      (route) => false);
                 },
                 child: Text('Login'.toUpperCase()),
                 style: ElevatedButton.styleFrom(
@@ -56,7 +70,7 @@ class SignUpPage extends StatelessWidget {
                   minimumSize: Size(200, 40), //size w & h
                 ),
               ),
-              SizedBox(height: 50),
+              SizedBox(height: 16),
               GestureDetector(
                 onTap: () {
                   Navigator.push(
@@ -66,8 +80,11 @@ class SignUpPage extends StatelessWidget {
                     ),
                   );
                 },
-                child: Text(
-                  'Daftar',
+                child: Center(
+                  child: Text(
+                    'Register',
+                    style: TextStyle(decoration: TextDecoration.underline),
+                  ),
                 ),
               ),
             ],
